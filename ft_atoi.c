@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/12 15:38:58 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/18 19:21:16 by tjeanner         ###   ########.fr       */
+/*   Created: 2016/12/09 05:40:04 by tjeanner          #+#    #+#             */
+/*   Updated: 2017/01/25 04:01:10 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcat(char *dst, const char *src, size_t size)
+int		ft_atoi(const char *str)
 {
 	int		i;
-	int		l;
+	int		sign;
+	int		nb;
 
 	i = 0;
-	l = ft_strlen(dst);
-	while (dst[l + i] && src[i] && i < (int)size)
+	nb = 0;
+	sign = 1;
+	while (ft_iswhitespace(str[i]))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		dst[l + i] = src[i];
+		sign = (str[i] == '-') ? -1 : 1;
 		i++;
 	}
-	dst[l + i] = '\0';
-	return (dst);
+	while (ft_isdigit(str[i]))
+	{
+		nb = nb * 10 + str[i] - '0';
+		i++;
+	}
+	return (sign * nb);
 }

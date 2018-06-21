@@ -6,7 +6,7 @@
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:19:12 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/12 17:21:58 by tjeanner         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:00:56 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isascii(int c)
 {
-	if ((unsigned char)c >= 0 && (unsigned char)c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

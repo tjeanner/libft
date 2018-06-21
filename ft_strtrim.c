@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/12 15:38:58 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/18 19:21:16 by tjeanner         ###   ########.fr       */
+/*   Created: 2018/06/18 16:47:21 by tjeanner          #+#    #+#             */
+/*   Updated: 2018/06/21 15:02:52 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strtrim(char const *s)
 {
 	int		i;
-	int		l;
+	int		o;
+	char	*new;
 
 	i = 0;
-	l = ft_strlen(dst);
-	while (dst[l + i] && src[i] && i < (int)size)
-	{
-		dst[l + i] = src[i];
+	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
-	}
-	dst[l + i] = '\0';
-	return (dst);
+	o = ft_strlen(s) - 1;
+	while (s[o] && (s[o] == ' ' || s[o] == '\n' || s[o] == '\t'))
+		o--;
+	if (o <= i || !(new = (char *)malloc(sizeof(char) * (o - i + 2))))
+		return (NULL);
+	ft_strncpy(new, s + i, o - i + 1);
+	new[o - i + 1] = '\0';
+	return (new);
 }

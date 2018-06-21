@@ -6,15 +6,15 @@
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:24:46 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/12 17:28:41 by tjeanner         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:13:27 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+int		ft_isprint(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	if (c >= ' ' && c <= '~')
 		return (1);
 	return (0);
 }

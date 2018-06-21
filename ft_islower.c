@@ -6,7 +6,7 @@
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:11:29 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/12 17:12:07 by tjeanner         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:00:02 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_islower(int c)
 {
-	if ((unsigned char)c >= 97 && (unsigned char)c <= 122)
+	if (c >= 'a' && c <= 'z')
 		return (1);
 	return (0);
 }

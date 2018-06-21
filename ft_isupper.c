@@ -6,7 +6,7 @@
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:09:27 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/12 17:11:11 by tjeanner         ###   ########.fr       */
+/*   Updated: 2018/06/13 16:59:54 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isupper(int c)
 {
-	if ((unsigned char)c >= 65 && (unsigned char)c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }

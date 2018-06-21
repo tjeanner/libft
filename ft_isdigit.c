@@ -6,7 +6,7 @@
 /*   By: tjeanner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:15:21 by tjeanner          #+#    #+#             */
-/*   Updated: 2018/06/12 17:21:50 by tjeanner         ###   ########.fr       */
+/*   Updated: 2018/06/13 17:12:06 by tjeanner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isdigit(int c)
 {
-	if ((unsigned char)c >= 48 && (unsigned char)c <= 57)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
